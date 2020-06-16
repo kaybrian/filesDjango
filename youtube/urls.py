@@ -4,4 +4,5 @@ app_name = 'youtube'
 
 urlpatterns = [
     path('',views.index,name='index'),
+    path('upload/',views.uploads,name='upload'),
 ]
