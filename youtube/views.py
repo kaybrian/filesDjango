@@ -8,6 +8,7 @@ def uploads(request):
     if request.method == 'POST':
         uploadedFiles = request.FILES['document']
         fs = FileSystemStorage()
-        fs.save(uploadedFiles.name,uploadedFiles)
-    context = {}
-    return render(request,'youtube/upload.html')
+        name = fs.save(uploadedFiles.name,uploadedFiles)
+        url = fs.url(name)
+    context = {'url':url}
+    return render(request,'youtube/upload.html',context)

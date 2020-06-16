@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block main_work %}
-<div class="row">
+<div class="row">url
     <div class="col-md-2"></div>
 
     <div class="col-md-8 bg-light" style="padding: 15px;">
@@ -12,6 +12,9 @@
             <input type="file" class="input" name="document" id="">
             <button type="submit" class="btn btn-outline-success">upload</button>
         </form>
+        {% if url  %}
+        <p>File path you uploaded : <a href="{{ url }}">{{url}}</a></p>
+        {% endif %}
     </div>
     <div class="col-md-2"></div>
 </div>
